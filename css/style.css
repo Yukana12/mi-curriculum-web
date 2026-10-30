@@ -1,0 +1,464 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.contenedor-main-perfil{
+    display: flex;
+    flex-direction: column; 
+}
+
+.contenedor-1{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    height: 350px;
+}
+
+.titulo-cv{
+    background-color: rgb(106, 206, 246);
+    color: blue;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.informacion h1{
+    font-size: 47px;
+    margin-top: 10px;
+}
+
+.informacion h3{
+    font-size: 23px;
+    color: blue;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.informacion p{
+    font-size: 16px;
+}
+
+
+.yo{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-top: 40px;
+}
+
+
+.botones{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.botones a{
+    text-decoration: none;
+}
+
+.contactame{
+    background-color: #3b82f6;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+.contactame p{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.ver-experiencias{
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/*AQUI VOY A ESTILIZAR MIS TARJETAS*/
+.contenedor-tarjetas{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+.contenedor-tarjetas a{
+    text-decoration: none;
+}
+.tarjeta{
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.tarjeta:hover{
+    background-color: #3b82f6;
+}
+
+.tarjeta span{
+    background-color: aqua;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: gray;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.tarjeta h3{
+    margin: 10px 0;
+}
+
+.tarjeta p{
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/*APARTADO DE CONTACTAME*/
+.contenedor-main-contactame{
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 24px;
+}
+
+.contenedor-formulario{
+    background-color: #ffff;
+    width: 100%;
+    max-width: 600px; /*OCUPA HASTA 600PX NO SE DESBORDA EN PANTALLAS CHICAS*/
+    box-sizing: border-box; /*EL PADDING NO AGRANDA LA CAJA*/
+    padding: 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+   /* margin-top: 20px;   */
+}
+
+.contenedor-formulario h2{
+    margin: 0 0 8px;
+}
+
+.subtitulo{
+    margin: 0 0 32px;
+    color: #475569;
+}
+
+/*CADA GRUPO ETIQUETA CON SU CAMPO*/
+.campo{
+    margin-bottom: 20px;
+}
+
+/*DOS CAMPOS AL LADO*/
+.fila{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+label{
+    display: block; /*La etiqueta ocupa su propia linea*/
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+input, select, textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;  /*Usa la misma letra del resto de la pagina*/
+    background-color: white;
+}
+
+/*cuando hago clic dentro del campo*/
+input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-color: #e253eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+textarea{ 
+   resize: vertical; /*Solo se puede estirar hacia abajo*/
+}
+
+/*botones*/
+.botones-formulario{
+    display: flex; 
+    gap: 12px; 
+    margin-top: 8px;
+}
+
+.btn{
+    width: auto;  /*anula el 100% del input*/
+    padding: 12px 28px;
+    background-color: #2563eb;
+    color: white;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+btn:hover{
+    background-color: #1d4ed8;
+}
+
+.btn-alt{
+    background-color: white;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+
+.btn-alt:hover{
+    background-color: #f1f5f9;
+}
+
+/*APARTADO DE ESTILOS PARA LA PAGINA CURSOS*/
+.contenedor-main-cursos{
+   background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 24px;
+}
+.contenedor-cursos{
+    width: 100%;
+    max-width: 1150px;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.fila-cursos{
+    --minimo: 250px; 
+    --espacio: 20px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espacio);
+}
+
+.tarjeta-cursos{
+    background-color: #ffff;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+    /*    outline: none;
+    border-color: #e253eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);*/
+}
+
+.tarjeta-cursos:hover{
+    background-color: #e253eb;
+    outline: none;
+    border-color: #e253eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+
+.fecha{
+    background-color: #3b82f6;
+    display: inline-block;
+    margin-block: 10px;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+.tarjeta-cursos h3{
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+.tarjeta-cursos h3, .tarjeta-cursos h4{
+    margin: 0 0 15px;
+}
+
+/*APARTADO DE LA PAGINA DE ESTUDIOS*/
+.contenedor-main-estudios{
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+}
+
+/*Linea vertical*/
+.linea-tiempo{
+    border-left: 2px solid #bfdbfe;
+    padding-left: 28px;
+    margin-left: 8px;
+}
+
+/*cada estudio*/
+.item-tiempo{
+    position: relative;  /*clave para colocar el punto*/
+    margin-bottom: 32px;  
+}
+
+.item-tiempo::before{
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #2563eb;
+}
+
+.detalle{
+    color: #475569;
+    margin: 4px 0 0;
+}
+
+.item-tiempo ul{
+    margin: 8px 0 0;
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+/*APARTADO DE LA PAGINA HABILIDADES*/
+.contenedor-main-habilidades{
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 25px;
+}
+
+.contenedor-habilidades{
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.fila-habilidades{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-habilidades{
+    background-color: wheat;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.tarjeta-habilidades h3{
+    margin: 0 0 20px;
+}
+
+/*Nombre a la izquierda, porcentaje a la derecha*/
+.nivel{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 6px 0 18px;
+}
+
+/*La barra gris de fondo*/
+.barra{
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 99px;
+    margin: 6px 0 18px;
+}
+
+/*La parte azul que se rellena*/
+.relleno{
+    height: 8px;
+    background-color: #2563eb;
+}
+
+/*Etiquetas*/
+.etiqueta{
+    display: inline-block;
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 99px;
+    margin: 0 8px 10px 0;
+    font-size: 14px;
+}
+
+
+/*APARTADO DE EXPERIENCIAS DE LA PAGINA*/
+.contenedor-main-experiencia{
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 25px;
+
+}
+
+
+/*APARTADO DE REFERENCIAS DE LA PAGINA*/
+.contenedor-main-referencias{
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 25px;
+}
+
+.contenedor-referencias{
+    width: 100%;
+    max-width: 1000px;
+
+}
+
+.fila-referencias{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 10px 0px 10px 10px;
+}
+
+.tarjeta-referencias{
+    background-color: white;
+    padding: 20px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.tarjeta-referencias span{
+    width: auto;
+    background-color: #3b82f6;
+    padding: 5px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.tarjeta-referencias h4{
+    margin-bottom: 8px;
+}
+
+.tarjeta-referencias p{
+    margin-bottom: 8px;
+}
+

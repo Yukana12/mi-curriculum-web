@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/stilosGlobales.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="cabecera">
+        <h2 id="nombres">RICHARD AYALA</h2>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="contacto.html">CONTACTOS</a></li>
+            <li><a href="cursos.html">CURSOS</a></li>
+            <li><a href="estudios.html">ESTUDIOS</a></li>
+            <li><a href="experiencias.html">EXPERIENCIAS</a></li>
+            <li><a href="habilidades.html">HABILIDADES</a></li>
+            <li><a href="referencias.html">REFERENCIAS</a></li>
+        </ul>
+    </nav>
+    </header>
+    
+    <main class="contenedor-main-contactame">
+
+    <div class="contenedor-formulario">
+
+        <h2>CONTÁCTAME</h2>
+        <P class="subtitulo">Escríbeme y te respondo en el horario que prefieras</P>        
+
+        <form action="" method="get">
+
+            <div class="fila">
+                <div class="campo">
+                    <label for="nombre">NOMBRE</label>
+                    <input type="text" name="nombre" id="nombre" 
+                    placeholder="ingresa tu nombre" required >
+                </div>
+                <div class="campo">
+                    <label for="apellido">APELLIDO</label>
+                    <input type="text" name="apellido" id="apellido" 
+                    placeholder="Ingresa tu apellido">
+                </div>
+            </div>
+            
+           <div class="campo">
+                <label for="correo">EMAIL</label>
+                <input type="email" name="correo" id="correo"
+                placeholder="tucorreo@ejemplo.com">
+           </div>
+
+            <div class="fila">
+                <div class="campo">
+                    <label for="fecha">FECHA DE CONTACTO</label>
+                    <input type="date" name="fecha" id="fecha" min="2026-10-25">
+                </div>
+                <div class="campo">
+                    <label for="horario">HORARIO DE CONTACTO</label>
+                    <select name="horario" id="horario">
+                        <option value="mañana">mañana</option>
+                        <option value="tarde">tarde</option>
+                        <option value="noche">noche</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">MENSAJE</label>
+                <textarea name="mensaje" id="mensaje" rows="4"
+                placeholder="Cuéntame en qué te puedo ayudar"></textarea>
+            </div>
+
+            <div class="botones-formulario">
+                <input class="btn" type="submit" value="Enviar">
+                <input class="btn btn-alt" type="reset" name="limpiar" id="limpiar" value="Limpiar">
+            </div>
+            
+        </form>
+    </div>
+    </main>
+
+    
+</body>
+</html>
