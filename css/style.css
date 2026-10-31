@@ -16,14 +16,13 @@
 }
 
 .contenedor-1{
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto 0; /*centrado*/
-    padding: 0 24px; 
+    padding: 20px 24px; 
     display: flex;
     flex-wrap: wrap; /*para que se acomode en pantallas chicas*/
     justify-content: space-between; /*espacio entre los items*/
     gap: 40px; 
-    background-color: #296cb0;
 }
 
 .titulo-cv{
@@ -175,6 +174,7 @@ a.tarjeta{
     display: flex; 
     gap: 12px;
     flex-wrap: wrap; /*Permite que los botones se ajusten a la siguiente línea si no caben*/
+    margin-top: 16px;
 }
 .boton{
     display: inline-block; 
@@ -185,6 +185,15 @@ a.tarjeta{
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none; /*Elimina el subrayado del enlace*/
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    overflow-wrap: break-word; /*Evita que el texto se salga de la tarjeta*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /*Transición suave para el efecto hover*/
+}
+
+.boton:hover{
+    transform: translateY(-3px); /*Levanta el botón ligeramente*/ 
+    border-color: #60a5fa; /*Cambia el color del borde al pasar el mouse*/
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15); /*Aumenta la sombra al pasar el mouse*/
 }
 
 .boton-secundario{
