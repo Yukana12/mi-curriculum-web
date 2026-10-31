@@ -1,0 +1,417 @@
+[1mdiff --git a/css/style.css b/css/style.css[m
+[1mindex f051144..ff9381f 100644[m
+[1m--- a/css/style.css[m
+[1m+++ b/css/style.css[m
+[36m@@ -9,16 +9,21 @@[m
+     box-sizing: border-box;[m
+ }[m
+ [m
+[32m+[m[32m/*APARTADO DE PERFIL DE LA PAGINA*/[m
+ .contenedor-main-perfil{[m
+[31m-    display: flex;[m
+[31m-    flex-direction: column; [m
+[32m+[m[32m   background-color: #f8fafc;[m
+[32m+[m[32m    padding:0;[m
+ }[m
+ [m
+ .contenedor-1{[m
+[32m+[m[32m    max-width: 1000px;[m
+[32m+[m[32m    margin: 40px auto 0; /*centrado*/[m
+[32m+[m[32m    padding: 0 24px;[m[41m [m
+     display: flex;[m
+[31m-    justify-content: space-evenly;[m
+[31m-    margin-top: 40px;[m
+[31m-    height: 350px;[m
+[32m+[m[32m    flex-wrap: wrap; /*para que se acomode en pantallas chicas*/[m
+[32m+[m[32m    justify-content: space-between; /*espacio entre los items*/[m
+[32m+[m[32m    gap: 40px;[m[41m [m
+[32m+[m[32m    background-color: #296cb0;[m
+ }[m
+ [m
+ .titulo-cv{[m
+[36m@@ -29,6 +34,9 @@[m
+     padding: 10px;[m
+     margin-top: 10px;[m
+ }[m
+[32m+[m[32m.informacion{[m
+[32m+[m[32m    flex: 1 1 320;[m[41m [m
+[32m+[m[32m}[m
+ [m
+ .informacion h1{[m
+     font-size: 47px;[m
+[36m@@ -46,89 +54,144 @@[m
+     font-size: 16px;[m
+ }[m
+ [m
+[31m-[m
+ .yo{[m
+     width: 250px;[m
+     height: 250px;[m
+     object-fit: cover;[m
+     object-position: center;[m
+     border-radius: 50%;[m
+[31m-    margin-top: 40px;[m
+[32m+[m[32m    flex-shrink: 0; /*Evita que la imagen se encoja en pantallas chicas*/[m
+ }[m
+ [m
+[32m+[m[32m/*CADA BLOQUE CENTRADO Y CON ANCHO MAXIMO*/[m
+[32m+[m[32m.seccion{[m
+[32m+[m[32m    max-width: 1100px;[m
+[32m+[m[32m    margin: 0 auto;[m
+[32m+[m[32m    padding: 40px 24px;[m
+[32m+[m[32m}[m
+ [m
+[31m-.botones{[m
+[31m-    display: flex;[m
+[31m-    gap: 15px;[m
+[31m-    margin-top: 20px;[m
+[31m-    font-size: 16px;[m
+[32m+[m[32m.seccion h2{[m
+[32m+[m[32m    margin: 0 0 8px;[m
+[32m+[m[32m    font-size: clamp(1.5rem, 3vw, 2rem);[m
+ }[m
+[31m-.botones a{[m
+[31m-    text-decoration: none;[m
+[32m+[m
+[32m+[m[32m/*ESTELIZAR LA REJILLA PARA MAXIMO 3 COLUMNAS*/[m
+[32m+[m[32m.rejilla{[m
+[32m+[m[32m    display: grid;[m
+[32m+[m[32m    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));[m
+[32m+[m[32m    gap: 20px;[m
+ }[m
+ [m
+[31m-.contactame{[m
+[31m-    background-color: #3b82f6;[m
+[31m-    font-weight: bold;[m
+[31m-    padding: 10px 20px;[m
+[31m-    border-radius: 8px;[m
+[31m-    border: none;[m
+[32m+[m[32m/*TARJETA*/[m
+[32m+[m[32m.tarjeta{[m
+[32m+[m[32m    background-color: white;[m
+[32m+[m[32m    padding: 20px;[m
+[32m+[m[32m    border: 1px solid #e2e8f0;[m
+[32m+[m[32m    border-radius: 12px;[m
+[32m+[m[32m    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);[m
+[32m+[m[32m    overflow-wrap: break-word; /*Evita que el texto se salga de la tarjeta*/[m
+[32m+[m[32m    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /*Transición suave para el efecto hover*/[m
+ }[m
+ [m
+[31m-.contactame p{[m
+[31m-    color: white;[m
+[32m+[m[32m.tarjeta:hover{[m
+[32m+[m[32m    transform: translateY(-5px); /*Levanta la tarjeta ligeramente*/[m[41m [m
+[32m+[m[32m    border-color: #60a5fa; /*Cambia el color del borde al pasar el mouse*/[m
+[32m+[m[32m    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15); /*Aumenta la sombra al pasar el mouse*/[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.tarjeta h3{[m
+[32m+[m[32m    margin: 0 0 8px;[m
+[32m+[m[32m    font-size: 18px;[m
+     font-weight: bold;[m
+[31m-    font-size: 16px;[m
+ }[m
+ [m
+[31m-.ver-experiencias{[m
+[31m-    padding: 10px 20px;[m
+[31m-    border-radius: 8px;[m
+[31m-    border: none;[m
+[31m-    cursor: pointer;[m
+[32m+[m[32m.tarjeta p{[m
+[32m+[m[32m    margin: 0;[m[41m [m
+[32m+[m[32m    line-height: 1.5;[m
+[32m+[m[32m    color: #475569;[m
+ }[m
+ [m
+[31m-/*AQUI VOY A ESTILIZAR MIS TARJETAS*/[m
+[31m-.contenedor-tarjetas{[m
+[31m-    display: flex;[m
+[31m-    gap: 10px;[m
+[31m-    justify-content: center;[m
+[31m-    width: 100%;[m
+[32m+[m[32m/*Tarjeta que es enlace o acceso directo*/[m
+[32m+[m[32ma.tarjeta{[m
+[32m+[m[32m    display: block; /*Hace que toda la tarjeta sea clickeable*/[m
+[32m+[m[32m    text-decoration: none; /*Elimina el subrayado del enlace*/[m
+[32m+[m[32m    color: inherit; /*Mantiene el color del texto de la tarjeta*/[m
+ }[m
+[31m-.contenedor-tarjetas a{[m
+[31m-    text-decoration: none;[m
+[32m+[m
+[32m+[m[32m/*Imagen de los proyectos*/[m
+[32m+[m[32m.tarjeta img{[m
+[32m+[m[32m    display : block; /*Elimina el espacio inferior de la imagen*/[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    height: 150px;[m
+[32m+[m[32m    object-fit: cover; /*La imagen se recorta para llenar el contenedor*/[m
+[32m+[m[32m    border-radius: 8px;[m
+[32m+[m[32m    margin-bottom: 12px;[m
+ }[m
+[31m-.tarjeta{[m
+[31m-    padding: 20px;[m
+[31m-    border: 1px solid #ddd;[m
+[31m-    border-radius: 12px;[m
+[31m-    background-color: white;[m
+[32m+[m
+[32m+[m[32m/*Lista de objetivos*/[m
+[32m+[m[32m.objetivos{[m
+[32m+[m[32m    margin: 8px 0 0;[m[41m [m
+[32m+[m[32m    padding-left: 20px; /*Sangría para los elementos de la lista*/[m
+[32m+[m[32m    line-height: 1.7; /*Espaciado entre líneas para mejorar la legibilidad*/[m
+ }[m
+ [m
+[31m-.tarjeta:hover{[m
+[31m-    background-color: #3b82f6;[m
+[32m+[m[32m.etiquetas{[m
+[32m+[m[32m    display: flex; /*Muestra las etiquetas en línea*/[m
+[32m+[m[32m    flex-wrap: wrap; /*Permite que las etiquetas se ajusten a la siguiente línea si no caben*/[m
+[32m+[m[32m    gap: 8px; /*Espacio entre etiquetas*/[m
+[32m+[m[32m    margin: 12px 0 0; /*Margen superior para separar de otros elementos*/[m
+[32m+[m[32m    list-style: none; /*Elimina los puntos de la lista*/[m
+[32m+[m[32m    padding: 0; /*Elimina el padding por defecto de la lista*/[m
+ }[m
+ [m
+[31m-.tarjeta span{[m
+[31m-    background-color: aqua;[m
+[31m-    font-size: 12px;[m
+[31m-    text-transform: uppercase;[m
+[31m-    color: gray;[m
+[31m-    padding: 5px;[m
+[31m-    display: inline-block;[m
+[31m-    border-radius: 5px;[m
+[32m+[m[32m.etiquetas li{[m
+[32m+[m[32m    background-color: #f1f5f9;[m[41m [m
+[32m+[m[32m    padding: 6px 12px;[m
+[32m+[m[32m    border-radius: 99px; /*Hace que las etiquetas sean redondeadas*/[m
+[32m+[m[32m    font-size: 14px;[m
+[32m+[m[32m    border: 1px solid #e2e8f0; /*Borde sutil para las etiquetas*/[m
+ }[m
+ [m
+[31m-.tarjeta h3{[m
+[31m-    margin: 10px 0;[m
+[32m+[m[32m.insignia{[m
+[32m+[m[32m    display: inline-block; /*Permite que la insignia se comporte como un elemento en línea pero con propiedades de bloque*/[m
+[32m+[m[32m    background-color: #3b82f6;[m
+[32m+[m[32m    color: white;[m[41m [m
+[32m+[m[32m    padding: 4px 12px;[m[41m [m
+[32m+[m[32m    border-radius: 25px;[m[41m [m
+[32m+[m[32m    font-size: 12px; /*Tamaño de fuente más pequeño para la insignia*/[m
+[32m+[m[32m    margin-bottom: 8px; /*Margen inferior para separar de otros elementos*/[m
+ }[m
+ [m
+[31m-.tarjeta p{[m
+[31m-    margin: 0;[m
+[31m-    line-height: 1.5;[m
+[32m+[m[32m.enlace-proyecto{[m
+[32m+[m[32m    display: inline-block;[m[41m [m
+[32m+[m[32m    margin-top: 12px;[m[41m [m
+[32m+[m[32m    color: #2563eb;[m
+[32m+[m[32m    font-weight: bold;[m
+[32m+[m[32m    text-decoration: none; /*Elimina el subrayado del enlace*/[m
+ }[m
+ [m
+[32m+[m[32m/*Botones: son enlaces con aspecto de botón*/[m
+[32m+[m[32m.botones{[m
+[32m+[m[32m    display: flex;[m[41m [m
+[32m+[m[32m    gap: 12px;[m
+[32m+[m[32m    flex-wrap: wrap; /*Permite que los botones se ajusten a la siguiente línea si no caben*/[m
+[32m+[m[32m}[m
+[32m+[m[32m.boton{[m
+[32m+[m[32m    display: inline-block;[m[41m [m
+[32m+[m[32m    padding: 12px 28px;[m[41m [m
+[32m+[m[32m    background-color: #2563eb;[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    border: 1px solid #2563eb;[m
+[32m+[m[32m    border-radius: 8px;[m
+[32m+[m[32m    font-weight: bold;[m
+[32m+[m[32m    text-decoration: none; /*Elimina el subrayado del enlace*/[m
+[32m+[m[32m}[m
+ [m
+[32m+[m[32m.boton-secundario{[m
+[32m+[m[32m    background-color: white;[m
+[32m+[m[32m    color: #1e293b;[m
+[32m+[m[32m    border-color: #cbd5e1;[m
+[32m+[m[32m}[m
+ /*APARTADO DE CONTACTAME*/[m
+ .contenedor-main-contactame{[m
+     background-color: #f8fafc;[m
+[36m@@ -218,9 +281,6 @@[m [mtextarea{[m
+     cursor: pointer;[m
+ }[m
+ [m
+[31m-btn:hover{[m
+[31m-    background-color: #1d4ed8;[m
+[31m-}[m
+ [m
+ .btn-alt{[m
+     background-color: white;[m
+[36m@@ -426,7 +486,6 @@[m [mbtn:hover{[m
+ .contenedor-referencias{[m
+     width: 100%;[m
+     max-width: 1000px;[m
+[31m-[m
+ }[m
+ [m
+ .fila-referencias{[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 2b677c9..4373eba 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -1,9 +1,9 @@[m
+ [m
+[31m-<DOCTYPE html>[m
+[31m-<html lang="en">[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="es">[m
+ <head>[m
+     <meta charset="UTF-8">[m
+[31m-    <meta name="viewport">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+     <title>[m
+         Mi sitio web[m
+     </title>[m
+[36m@@ -30,6 +30,7 @@[m
+ [m
+     <main class="contenedor-main-perfil">[m
+         <div class="contenedor-1">[m
+[32m+[m
+             <div class="informacion">[m
+                 <p><span class="titulo-cv">CURRICULUM VITAE</span></p>[m
+ [m
+[36m@@ -41,37 +42,114 @@[m
+                 <p>encontrarás mi información, mis cursos y mi experiencia </p>    [m
+ [m
+                 <div class="botones">[m
+[31m-                    <button type="button" class="contactame"><a href="contacto.html"><p>Contáctame</p></a></button>[m
+[31m-                    <button type="button" class="ver-experiencias"><p>Ver experiencias</p></button>[m
+[32m+[m[32m                    <a href="contacto.html" class="boton">Contáctame</a>[m
+[32m+[m[32m                    <a href="cursos.html" class="boton boton-secundario">Mis cursos</a>[m
+                 </div>[m
+             </div>[m
+             <img class="yo" src="img/gabriel.jpeg" alt="Gabriel Ayala">[m
+         </div>[m
+ [m
+[31m-        <section class="contenedor-tarjetas">[m
+[31m-            <a href="contacto.html"><div class="tarjeta">[m
+[31m-                [m
+[31m-                <span>ESTUDIOS</span>[m
+[31m-                <h4>Formación academica</h4>[m
+[31m-                <p>Mi camino de aprendisaje hasta hoy</p>[m
+[31m-                [m
+[31m-            </div></a>[m
+[31m-[m
+[31m-            <div class="tarjeta">[m
+[31m-                <span>ESTUDIOS</span>[m
+[31m-                <h4>Formación academica</h4>[m
+[31m-                <p>Mi camino de aprendisaje hasta hoy</p>[m
+[32m+[m[32m        <section class="seccion" id="perfil">[m
+[32m+[m[32m            <h2>Perfil</h2>[m
+[32m+[m[32m            <p class="subtitulo">Mis intereses y hacia dónde quiero ir</p>[m
+[32m+[m
+[32m+[m[32m            <div class="rejilla">[m
+[32m+[m
+[32m+[m[32m                <article class="tarjeta">[m
+[32m+[m[32m                    <h3>Sobre mí</h3>[m
+[32m+[m[32m                    <p>Soy un estudiante de desarrollo de software con pasión por la creación de páginas web y aplicaciones. Me gusta aprender nuevas tecnologías y mejorar mis habilidades constantemente.</p>[m
+[32m+[m[32m                </article>[m
+[32m+[m
+[32m+[m[32m                <article class="tarjeta">[m
+[32m+[m[32m                    <h3>Intereses</h3>[m
+[32m+[m[32m                    <ul class="etiquetas">[m
+[32m+[m[32m                        <li>Desarrollo web</li>[m
+[32m+[m[32m                        <li>Diseño UX/UI</li>[m
+[32m+[m[32m                        <li>Base de datos</li>[m
+[32m+[m[32m                        <li>Programación</li>[m
+[32m+[m[32m                    </ul>[m
+[32m+[m[32m                </article>[m
+[32m+[m
+[32m+[m[32m                <article class="tarjeta">[m
+[32m+[m[32m                    <h3>Objetivos</h3>[m
+[32m+[m[32m                    <ul class="objetivos">[m
+[32m+[m[32m                        <li>Aprender nuevas tecnologías</li>[m
+[32m+[m[32m                        <li>Mejorar mis habilidades de programación</li>[m
+[32m+[m[32m                        <li>Trabajar como desarrollador web full stack</li>[m
+[32m+[m[32m                        <li>Contribuir a la comunidad de desarrollo</li>[m
+[32m+[m[32m                    </ul>[m
+[32m+[m[32m                </article>[m
+             </div>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        <section class="seccion" id="proyectos">[m
+[32m+[m[32m            <h2>Proyectos</h2>[m
+[32m+[m[32m            <p class="subtitulo">Algunos proyectos académicos y personales</p>[m
+[32m+[m
+[32m+[m[32m            <div class="rejilla">[m
+[32m+[m[32m                <article class="tarjeta">[m
+[32m+[m[32m                    <img src="img/1380956.jpg" alt="Personaje de videojuego Jane Doe">[m
+[32m+[m
+[32m+[m[32m                    <h3>Curriculum Web</h3>[m
+[32m+[m[32m                    <p>Página personal con HTML5 Y CSS3, publicada en GitHub Pages</p>[m
+[32m+[m
+[32m+[m[32m                    <ul class="etiquetas">[m
+[32m+[m[32m                        <li>HTML5</li>[m
+[32m+[m[32m                        <li>CSS3</li>[m
+[32m+[m[32m                    </ul>[m
+[32m+[m[32m                    <a href="https://github.com/Yukana12/mi-curriculum-web" class="enlace-proyecto">Ver proyecto &rarr;</a>[m
+[32m+[m[32m                </article>[m
+ [m
+[31m-            <div class="tarjeta">[m
+[31m-                <span>ESTUDIOS</span>[m
+[31m-                <h4>Formación academica</h4>[m
+[31m-                <p>Mi camino de aprendisaje hasta hoy</p>[m
+[32m+[m[32m                <article class="tarjeta">[m
+[32m+[m[32m                    <img src="img/1380956.jpg" alt="Personaje de videojuego Jane Doe">[m
+[32m+[m
+[32m+[m[32m                    <h3>Curriculum Web</h3>[m
+[32m+[m[32m                    <p>Página personal con HTML5 Y CSS3, publicada en GitHub Pages</p>[m
+[32m+[m
+[32m+[m[32m                    <ul class="etiquetas">[m
+[32m+[m[32m                        <li>HTML5</li>[m
+[32m+[m[32m                        <li>CSS3</li>[m
+[32m+[m[32m                    </ul>[m
+[32m+[m[32m                    <a href="https://github.com/Yukana12/mi-curriculum-web" class="enlace-proyecto">Ver proyecto &rarr;</a>[m
+[32m+[m[32m                </article>[m
+[32m+[m
+[32m+[m[32m                <article class="tarjeta">[m
+[32m+[m[32m                    <img src="img/1380956.jpg" alt="Personaje de videojuego Jane Doe">[m
+[32m+[m
+[32m+[m[32m                    <h3>Curriculum Web</h3>[m
+[32m+[m[32m                    <p>Página personal con HTML5 Y CSS3, publicada en GitHub Pages</p>[m
+[32m+[m
+[32m+[m[32m                    <ul class="etiquetas">[m
+[32m+[m[32m                        <li>HTML5</li>[m
+[32m+[m[32m                        <li>CSS3</li>[m
+[32m+[m[32m                    </ul>[m
+[32m+[m[32m                    <a href="https://github.com/Yukana12/mi-curriculum-web" class="enlace-proyecto">Ver proyecto &rarr;</a>[m
+[32m+[m[32m                </article>[m
+             </div>[m
+[31m-            [m
+         </section>[m
+ [m
+[31m-    </main>[m
+[32m+[m[32m        <section class="seccion" aria-label="Accesos rápidos">[m
+[32m+[m[32m            <div class="rejilla">[m
+[32m+[m[32m                <a href="estudios.html" class="tarjeta">[m
+[32m+[m[32m                    <span class="insignia">Estudios</span>[m
+[32m+[m[32m                    <h3>Mi formación académica</h3>[m
+[32m+[m[32m                    <p>Mi camino de aprendizaje hasta hoy</p>[m
+[32m+[m[32m                </a>[m
+[32m+[m
+[32m+[m[32m                <a href="estudios.html" class="tarjeta">[m
+[32m+[m[32m                    <span class="insignia">Estudios</span>[m
+[32m+[m[32m                    <h3>Mi formación académica</h3>[m
+[32m+[m[32m                    <p>Mi camino de aprendizaje hasta hoy</p>[m
+[32m+[m[32m                </a>[m
+ [m
+[32m+[m[32m                <a href="estudios.html" class="tarjeta">[m
+[32m+[m[32m                    <span class="insignia">Estudios</span>[m
+[32m+[m[32m                    <h3>Mi formación académica</h3>[m
+[32m+[m[32m                    <p>Mi camino de aprendizaje hasta hoy</p>[m
+[32m+[m[32m                </a>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </section>[m
+[32m+[m[41m    [m
+[32m+[m[32m    </main>[m
+ </body>[m
+ </html>[m
+\ No newline at end of file[m

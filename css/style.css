@@ -9,16 +9,21 @@
     box-sizing: border-box;
 }
 
+/*APARTADO DE PERFIL DE LA PAGINA*/
 .contenedor-main-perfil{
-    display: flex;
-    flex-direction: column; 
+   background-color: #f8fafc;
+    padding:0;
 }
 
 .contenedor-1{
+    max-width: 1000px;
+    margin: 40px auto 0; /*centrado*/
+    padding: 0 24px; 
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 40px;
-    height: 350px;
+    flex-wrap: wrap; /*para que se acomode en pantallas chicas*/
+    justify-content: space-between; /*espacio entre los items*/
+    gap: 40px; 
+    background-color: #296cb0;
 }
 
 .titulo-cv{
@@ -28,6 +33,9 @@
     border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
+}
+.informacion{
+    flex: 1 1 320; 
 }
 
 .informacion h1{
@@ -46,89 +54,144 @@
     font-size: 16px;
 }
 
-
 .yo{
     width: 250px;
     height: 250px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    margin-top: 40px;
+    flex-shrink: 0; /*Evita que la imagen se encoja en pantallas chicas*/
 }
 
-
-.botones{
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    font-size: 16px;
-}
-.botones a{
-    text-decoration: none;
+/*CADA BLOQUE CENTRADO Y CON ANCHO MAXIMO*/
+.seccion{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
 }
 
-.contactame{
-    background-color: #3b82f6;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
+.seccion h2{
+    margin: 0 0 8px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-.contactame p{
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
+/*ESTELIZAR LA REJILLA PARA MAXIMO 3 COLUMNAS*/
+.rejilla{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.ver-experiencias{
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-}
-
-/*AQUI VOY A ESTILIZAR MIS TARJETAS*/
-.contenedor-tarjetas{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    width: 100%;
-}
-.contenedor-tarjetas a{
-    text-decoration: none;
-}
+/*TARJETA*/
 .tarjeta{
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
     background-color: white;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    overflow-wrap: break-word; /*Evita que el texto se salga de la tarjeta*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /*Transición suave para el efecto hover*/
 }
 
 .tarjeta:hover{
-    background-color: #3b82f6;
-}
-
-.tarjeta span{
-    background-color: aqua;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: gray;
-    padding: 5px;
-    display: inline-block;
-    border-radius: 5px;
+    transform: translateY(-5px); /*Levanta la tarjeta ligeramente*/ 
+    border-color: #60a5fa; /*Cambia el color del borde al pasar el mouse*/
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15); /*Aumenta la sombra al pasar el mouse*/
 }
 
 .tarjeta h3{
-    margin: 10px 0;
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .tarjeta p{
-    margin: 0;
+    margin: 0; 
     line-height: 1.5;
+    color: #475569;
 }
 
+/*Tarjeta que es enlace o acceso directo*/
+a.tarjeta{
+    display: block; /*Hace que toda la tarjeta sea clickeable*/
+    text-decoration: none; /*Elimina el subrayado del enlace*/
+    color: inherit; /*Mantiene el color del texto de la tarjeta*/
+}
 
+/*Imagen de los proyectos*/
+.tarjeta img{
+    display : block; /*Elimina el espacio inferior de la imagen*/
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /*La imagen se recorta para llenar el contenedor*/
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/*Lista de objetivos*/
+.objetivos{
+    margin: 8px 0 0; 
+    padding-left: 20px; /*Sangría para los elementos de la lista*/
+    line-height: 1.7; /*Espaciado entre líneas para mejorar la legibilidad*/
+}
+
+.etiquetas{
+    display: flex; /*Muestra las etiquetas en línea*/
+    flex-wrap: wrap; /*Permite que las etiquetas se ajusten a la siguiente línea si no caben*/
+    gap: 8px; /*Espacio entre etiquetas*/
+    margin: 12px 0 0; /*Margen superior para separar de otros elementos*/
+    list-style: none; /*Elimina los puntos de la lista*/
+    padding: 0; /*Elimina el padding por defecto de la lista*/
+}
+
+.etiquetas li{
+    background-color: #f1f5f9; 
+    padding: 6px 12px;
+    border-radius: 99px; /*Hace que las etiquetas sean redondeadas*/
+    font-size: 14px;
+    border: 1px solid #e2e8f0; /*Borde sutil para las etiquetas*/
+}
+
+.insignia{
+    display: inline-block; /*Permite que la insignia se comporte como un elemento en línea pero con propiedades de bloque*/
+    background-color: #3b82f6;
+    color: white; 
+    padding: 4px 12px; 
+    border-radius: 25px; 
+    font-size: 12px; /*Tamaño de fuente más pequeño para la insignia*/
+    margin-bottom: 8px; /*Margen inferior para separar de otros elementos*/
+}
+
+.enlace-proyecto{
+    display: inline-block; 
+    margin-top: 12px; 
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none; /*Elimina el subrayado del enlace*/
+}
+
+/*Botones: son enlaces con aspecto de botón*/
+.botones{
+    display: flex; 
+    gap: 12px;
+    flex-wrap: wrap; /*Permite que los botones se ajusten a la siguiente línea si no caben*/
+}
+.boton{
+    display: inline-block; 
+    padding: 12px 28px; 
+    background-color: #2563eb;
+    color: white;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none; /*Elimina el subrayado del enlace*/
+}
+
+.boton-secundario{
+    background-color: white;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
 /*APARTADO DE CONTACTAME*/
 .contenedor-main-contactame{
     background-color: #f8fafc;
@@ -218,9 +281,6 @@ textarea{
     cursor: pointer;
 }
 
-btn:hover{
-    background-color: #1d4ed8;
-}
 
 .btn-alt{
     background-color: white;
@@ -426,7 +486,6 @@ btn:hover{
 .contenedor-referencias{
     width: 100%;
     max-width: 1000px;
-
 }
 
 .fila-referencias{
